@@ -17,10 +17,17 @@ function App() {
       ]);
     }
 
+    const eliminarRegistro = (id) => {
+      let save = PacientesList.filter(list => list.id !== id );
+
+      setPacientesList(save);
+      console.log(save);
+    }
+
   return (
       <> 
-      <h1>Adminitrador de citas</h1>
-
+      <h1><img src={logo} className="Imagen" alt="logo" />Adminitrador de citas <img src={logo} className="Imagen" alt="logo" /></h1>
+      
       <div className="container">
         <div className="row">
           <div className="one-half column">
@@ -28,16 +35,20 @@ function App() {
           </div>
           <div className="one-half column">
             <h2>Lista</h2>
-              {PacientesList.map(paciente =>(
+            
+              {  (PacientesList.length !== 0) ? PacientesList.map(paciente =>(
                 
                 <Table
                 key={paciente.id}
-                paciente={paciente} />
+                paciente={paciente} 
+                eliminarRegistro={eliminarRegistro}/>
               )
 
-            )}
+            )
+          : <h3> Sin registros...</h3>
+          }
               
-              <img src={logo} className="App-logo" alt="logo" />
+              
           </div>
           
             <header className="App-header">

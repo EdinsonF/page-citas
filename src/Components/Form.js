@@ -105,7 +105,7 @@ const Form = ({guardarRegistro}) => {
 
         <button 
             type="submit"
-            className="u-full-width button-primary"
+            className="u-full-width registrar"
         >Agregar</button>
       </form>
     </>

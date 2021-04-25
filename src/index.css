@@ -23,6 +23,12 @@ h1, h2  {
   font-family: 'Staatliches', cursive;
   letter-spacing: 1px;
 }
+h3 {
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+  letter-spacing: 5px;
+}
 .lista-citas .media {
   border-bottom: 1px solid #e1e1e1;
   padding-bottom: 3rem;
@@ -65,7 +71,8 @@ input[type="time"] {
 
 .cita p {
   font-weight: bold;
-  margin-bottom: .8rem;
+  margin-bottom: .1rem;
+  
 }
 .cita p span {
   font-weight: normal;
@@ -80,8 +87,14 @@ input[type="time"] {
   border-bottom-right-radius: 1rem;
 }
 .button.eliminar,
-.button.eliminar:hover {
-  background-color: #c10059;
+.button.eliminar {
+  background-color: #e47e98;
+  color: white;
+  margin-top: 2rem;
+}
+
+.registrar {
+  background-color: #00626e;
   color: white;
   margin-top: 2rem;
 }
@@ -97,23 +110,31 @@ input[type="time"] {
 } 
 
 
-
+.Imagen {
+  animation: App-logo-spin infinite 20s linear;
+  height: 10vmin;
+  pointer-events: none;
+ 
+}
 
 .App {
   text-align: center;
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
+  position:absolute;
+} */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .Imagen {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+ */
 
 
 
