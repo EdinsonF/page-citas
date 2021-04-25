@@ -61,6 +61,8 @@ const Form = ({guardarRegistro}) => {
 
   }
 
+
+
   return ( 
     <>
       <h2>Crear Cita</h2>

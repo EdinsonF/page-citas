@@ -1,14 +1,30 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import logo from './logo.svg';
 import Form from './Components/Form';
 import Table from './Components/Table';
 
 
+
 function App() {
 
-    const [PacientesList, setPacientesList] = useState([])
+  let storageBD = JSON.parse(localStorage.getItem('pacientes'));
+    if(!storageBD){
+ 
+        storageBD = [];
+    }
 
-    console.log(PacientesList);
+    const [PacientesList, setPacientesList] = useState(storageBD)
+
+    useEffect(() => {
+
+        localStorage.setItem('pacientes', JSON.stringify(PacientesList));
+ 
+      
+    }, [PacientesList]);
+
+   
+
+
 
     const guardarRegistro = (paciente) => {
       setPacientesList([
@@ -21,8 +37,11 @@ function App() {
       let save = PacientesList.filter(list => list.id !== id );
 
       setPacientesList(save);
-      console.log(save);
+      
     }
+
+
+    let lista = (PacientesList.length !== 0) ? "pacientes" : "Sin Registros...";
 
   return (
       <> 
@@ -34,9 +53,9 @@ function App() {
               <Form guardarRegistro={guardarRegistro}/>
           </div>
           <div className="one-half column">
-            <h2>Lista</h2>
+            <h2>{lista}</h2>
             
-              {  (PacientesList.length !== 0) ? PacientesList.map(paciente =>(
+              {   PacientesList.map(paciente =>(
                 
                 <Table
                 key={paciente.id}
@@ -45,7 +64,6 @@ function App() {
               )
 
             )
-          : <h3> Sin registros...</h3>
           }
               
               
