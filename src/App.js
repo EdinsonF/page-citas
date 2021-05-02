@@ -25,7 +25,6 @@ function App() {
    
 
 
-
     const guardarRegistro = (paciente) => {
       setPacientesList([
         ...PacientesList,

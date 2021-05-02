@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Table = ({paciente , eliminarRegistro}) => {
 
@@ -23,4 +24,10 @@ const Table = ({paciente , eliminarRegistro}) => {
    );
 }
  
+
+Table.propTypes = {
+  paciente: PropTypes.object.isRequired,
+  eliminarRegistro: PropTypes.func.isRequired
+}
+
 export default Table;

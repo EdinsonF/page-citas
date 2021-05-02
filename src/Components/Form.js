@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import PropTypes from 'prop-types';
+
 const Form = ({guardarRegistro}) => {
 
 
@@ -65,6 +67,7 @@ const Form = ({guardarRegistro}) => {
 
   return ( 
     <>
+    
       <h2>Crear Cita</h2>
       { Error.error ? <p className="alerta-error">{Error.mensaje}</p> : null}
       <form onSubmit={validarCampos}>
@@ -114,4 +117,8 @@ const Form = ({guardarRegistro}) => {
    );
 }
  
+ Form.propTypes = {
+   guardarRegistro: PropTypes.func.isRequired
+ }
+
 export default Form;
